@@ -9,6 +9,6 @@ spring:
       name: config-test-dev
 ---
 spring:
- profiles: default
- application:
+  profiles: default
+  application:
       name: config-test-default
