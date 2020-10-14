@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 8201
+
+spring:
+  profiles: dev
+    application:
+      name: config-client-test
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://jay:123@localhost:7001/eureka
+---
+server:
+  port: 8102
+
+spring:
+  profiles: beta
+    application:
+      name: microconfig-client-test
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:enjoy@localhost:7001/eureka
