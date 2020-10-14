@@ -1,0 +1,106 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 8080
+  
+# 所有的mapper映射文件
+mybatis:
+  mapper-locations: 
+  - classpath:mapping/*.xml
+  
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource # 配置当前要使用的数据源的操作类型
+    driver-class-name: com.mysql.jdbc.Driver # 配置MySQL的驱动程序类
+    url: jdbc:mysql://localhost:3306/21springcloud?serverTimezone=GMT%2B8 # 数据库连接地址
+    username: root  # 数据库用户名
+    password: root  # 数据库连接密码
+    
+  application:
+    name: config-product-client
+  profiles: dev
+
+    
+eureka:
+  client:                 # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://jay:123@localhost:7001/eureka # 单个eureka
+      # defaultZone: http://jay:123@eureka1:7001/eureka,http://jay:123@eureka2:7002/eureka,http://jay:123@eureka3:7003/eureka  # 集群eureka
+
+  instance:
+    instance-id: config-product-client
+    prefer-ip-address: true
+#    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
+#    lease-expiration-duration-in-seconds: 5  # 如果现在超过了5秒的间隔（默认是90秒）
+
+# springboot actuator
+info:
+  app.name: config-product-client
+  company.name: jay
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$
+  
+logging:
+  level:
+    com.jay.mapper: debug
+    
+# HystrixDashboard
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+---
+server:
+  port: 8081
+  
+# 所有的mapper映射文件
+mybatis:
+  mapper-locations: 
+  - classpath:mapping/*.xml
+  
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource # 配置当前要使用的数据源的操作类型
+    driver-class-name: com.mysql.jdbc.Driver # 配置MySQL的驱动程序类
+    url: jdbc:mysql://localhost:3306/21springcloud?serverTimezone=GMT%2B8 # 数据库连接地址
+    username: root  # 数据库用户名
+    password: root  # 数据库连接密码
+    
+  application:
+    name: config-product-client
+  profiles: beta
+ 
+ 
+eureka:
+  client:                 # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://jay:123@localhost:7001/eureka # 单个eureka
+      # defaultZone: http://jay:123@eureka1:7001/eureka,http://jay:123@eureka2:7002/eureka,http://jay:123@eureka3:7003/eureka  # 集群eureka
+
+  instance:
+    instance-id: config-product-client
+    prefer-ip-address: true
+#    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
+#    lease-expiration-duration-in-seconds: 5  # 如果现在超过了5秒的间隔（默认是90秒）
+
+# springboot actuator
+info:
+  app.name: config-product-client
+  company.name: jay
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$
+  
+logging:
+  level:
+    com.jay.mapper: debug
+    
+# HystrixDashboard
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
