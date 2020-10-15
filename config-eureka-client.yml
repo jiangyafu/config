@@ -16,7 +16,7 @@ eureka:
     service-url:
       defaultZone: http://jay:123@localhost:7001/eureka
   instance: 
-    hostname: localhost # 定义 Eureka 实例所在的主机名称
+    hostname: localhost 
     
 spring:
   profiles: dev
