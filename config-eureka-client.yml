@@ -13,17 +13,17 @@ eureka:
     fetch-registry: false
     register-with-eureka: false
     service-url:
-        defaultZone: http://admin:enjoy@localhost:7001/eureka
+        defaultZone: http://jay:123@localhost:7001/eureka
   instance: # eureak实例定义
     hostname: localhost # 定义 Eureka 实例所在的主机名称
 spring:
   profiles: dev
   security:
     user:
-      name: admin
-      password: enjoy
+      name: jay
+      password: 123
   application:
-    name: microcloud-config-eureka-client
+    name: config-eureka-client
 ---
 server:
  port: 7002
@@ -35,7 +35,7 @@ eureka:
     fetch-registry: false
     register-with-eureka: false
     service-url:
-        defaultZone: http://admin:enjoy@localhost:7002/eureka
+        defaultZone: http://jay:123@localhost:7002/eureka
   instance: # eureak实例定义
     hostname: localhost # 定义 Eureka 实例所在的主机名称
 spring:
