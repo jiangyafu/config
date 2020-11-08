@@ -26,7 +26,7 @@ spring:
 eureka:
   client:                 
     service-url:
-      defaultZone: http://jay:123@localhost:7002/eureka 
+      defaultZone: http://jay:123@localhost:7001/eureka 
       # defaultZone: http://jay:123@eureka1:7001/eureka,http://jay:123@eureka2:7002/eureka,http://jay:123@eureka3:7003/eureka  
 
   instance:
@@ -76,7 +76,7 @@ spring:
 eureka:
   client:                 
     service-url:
-      defaultZone: http://jay:123@localhost:7002/eureka 
+      defaultZone: http://jay:123@localhost:7001/eureka 
       # defaultZone: http://jay:123@eureka1:7001/eureka,http://jay:123@eureka2:7002/eureka,http://jay:123@eureka3:7003/eureka 
 
   instance:
