@@ -17,8 +17,8 @@ eureka:
       defaultZone: http://jay:123@localhost:7001/eureka
       
 info:
-  app.name: config-client-dev23
-  company.name: jay23
+  app.name: config-client-dev234
+  company.name: jay234
 
 ---
 server:
